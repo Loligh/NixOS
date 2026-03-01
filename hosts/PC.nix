@@ -13,6 +13,7 @@
   imports = [
     ../modules/desktop/defaultApps.nix
     ../modules/git.nix
+    ../modules/neovim.nix
     ../modules/aliases.nix
     ../modules/bootloader/grub.nix
     ../modules/desktop/hyprland.nix

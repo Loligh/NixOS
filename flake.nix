@@ -1,11 +1,16 @@
 {
-  description = "A very basic flake";
+  description = "My System Config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nvf = {
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,6 +32,7 @@
 	  ./hosts/PC.nix
 	  /etc/nixos/hardware-configuration.nix
 	  home-manager.nixosModules.home-manager
+	  nvf.nixosModules.default
 	];
       };
       Server = nixpkgs.lib.nixosSystem {
