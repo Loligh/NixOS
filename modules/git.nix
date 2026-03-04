@@ -7,9 +7,6 @@
         name = "Benjamin";
 	email = "erdle.benjamin@gmail.com";
       };
-      extraConfig = {
-        init.defaultBranch = "main";
-      };
     };
   };
 }

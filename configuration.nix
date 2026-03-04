@@ -10,11 +10,6 @@
 
   services.displayManager.ly.enable = true;
 
-  
-
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -96,7 +91,6 @@
      rofi
      hyprlauncher
      vesktop
-     bibata-cursors
      cider-2
      wootility
      fastfetch

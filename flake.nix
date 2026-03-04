@@ -22,7 +22,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = inputs @ {self, nixpkgs, home-manager, ...}:
+  outputs = inputs @ {self, nixpkgs, home-manager, nvf, ...}:
   {
     nixosConfigurations = {
       PC = nixpkgs.lib.nixosSystem {
