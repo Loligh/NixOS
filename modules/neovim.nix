@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   environment.variables.EDITOR = "nvim";
 
@@ -12,7 +12,19 @@
         enable = true;
       };
 
-      vim.clipboard.enable = true;
+      vim.autopairs.enable = true;
+
+      vim.clipboard = {
+        enable = true;
+        providers.wl-copy.enable = true;
+      };
+
+      vim.statusline.lualine.enable = true;
+
+      vim.languages = {
+        nix.enable = true;
+        qml.enable = true;
+      };
     };
   };
 }
