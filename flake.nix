@@ -1,5 +1,5 @@
 {
-  description = "My System Config";
+  description = "System Config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";

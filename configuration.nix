@@ -2,10 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.displayManager.ly.enable = true;
@@ -22,10 +30,11 @@
   services.playerctld.enable = true;
 
   programs.dconf.enable = true;
-  programs.dconf.profiles.user.databases =
-  [{
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  }];
+  programs.dconf.profiles.user.databases = [
+    {
+      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    }
+  ];
 
   #networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -63,13 +72,21 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.benjamin = {
     isNormalUser = true;
     description = "benjamin";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -78,33 +95,31 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-     git
-     hyprcursor
-     hyprshot
-     neovim
-     ghostty
-     yazi
-     firefox
-     chromium
-     rofi
-     hyprlauncher
-     vesktop
-     cider-2
-     wootility
-     fastfetch
-     nyxt
-     mangohud
-     obsidian
-     signal-desktop
-     jetbrains.idea
-     vscodium
-     python314
-     feh
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    git
+    hyprcursor
+    hyprshot
+    neovim
+    ghostty
+    yazi
+    firefox
+    chromium
+    rofi
+    hyprlauncher
+    vesktop
+    cider-2
+    wootility
+    fastfetch
+    nyxt
+    mangohud
+    obsidian
+    signal-desktop
+    jetbrains.idea
+    vscodium
+    python314
+    feh
   ];
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
