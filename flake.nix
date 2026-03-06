@@ -22,26 +22,33 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = inputs @ {self, nixpkgs, home-manager, nvf, ...}:
-  {
-    nixosConfigurations = {
-      PC = nixpkgs.lib.nixosSystem {
-	specialArgs= {inherit inputs;};
-	modules = [
-	  ./configuration.nix
-	  ./hosts/PC.nix
-	  /etc/nixos/hardware-configuration.nix
-	  home-manager.nixosModules.home-manager
-	  nvf.nixosModules.default
-	];
-      };
-      Server = nixpkgs.lib.nixosSystem {
-        specialArgs= {inherit inputs;};
-	modules = [
-	  ./hosts/Server.nix
-	  home-manager.nixosModules.home-manager
-	];
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      nvf,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        PC = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./configuration.nix
+            ./hosts/PC.nix
+            /etc/nixos/hardware-configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+        };
+        Server = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/Server.nix
+            /etc/nixos/hardware-configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+        };
       };
     };
-  };
 }

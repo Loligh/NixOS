@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home-manager.users.benjamin = {
     home.packages = with pkgs; [

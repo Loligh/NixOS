@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home-manager.users.benjamin = {
+    home.packages = [
+      pkgs.hyprcursor
+    ];
     home.pointerCursor = {
       enable = true;
       hyprcursor.enable = true;

@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   home-manager.users.benjamin = {
     programs.git = {
       enable = true;
       settings.user = {
         name = "Benjamin";
-	email = "erdle.benjamin@gmail.com";
+        email = "erdle.benjamin@gmail.com";
       };
     };
   };

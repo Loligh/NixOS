@@ -1,4 +1,4 @@
-{ ... }:
+{ nvf, ... }:
 {
   environment.variables.EDITOR = "nvim";
 
@@ -6,38 +6,50 @@
     enable = true;
 
     settings = {
-      vim.viAlias = false;
-      vim.vimAlias = true;
+      vim = {
+        viAlias = false;
+        vimAlias = true;
 
-      vim.autopairs.nvim-autopairs.enable = true;
+        autopairs = {
+          "nvim-autopairs".enable = true;
+        };
 
-      vim.clipboard = {
-        enable = true;
-        registers = "unnamedplus";
-        providers.wl-copy.enable = true;
+        options = {
+          tabstop = 2;
+          shiftwidth = 2;
+        };
+        treesitter.indent.enable = true;
+
+        clipboard = {
+          enable = true;
+          registers = "unnamedplus";
+          providers.wl-copy.enable = true;
+        };
+
+        statusline = {
+          lualine.enable = true;
+        };
+
+        lsp.enable = true;
+        languages = {
+          enableTreesitter = true;
+          enableFormat = true;
+          enableExtraDiagnostics = true;
+
+          nix.enable = true;
+          qml.enable = true;
+        };
+
+        autocmds = [
+          {
+            event = [
+              "BufRead"
+              "BufWritePre"
+            ];
+            command = "lua vim.lsp.buf.format()";
+          }
+        ];
       };
-
-      vim.statusline.lualine.enable = true;
-
-      vim.lsp.enable = true;
-      vim.languages = {
-        enableTreesitter = true;
-        enableFormat = true;
-        enableExtraDiagnostics = true;
-
-        nix.enable = true;
-        #qml.enable = true;
-      };
-
-      vim.autocmds = [
-        {
-          event = [
-            "BufRead"
-            "BufWritePre"
-          ];
-          command = "lua vim.lsp.buf.format()";
-        }
-      ];
     };
   };
 }

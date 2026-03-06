@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   hardware.xone.enable = true;
 
@@ -8,7 +8,7 @@
     enable = true;
     gamescopeSession.enable = true;
     extraCompatPackages = with pkgs; [
-	proton-ge-bin
+      proton-ge-bin
     ];
   };
 }
