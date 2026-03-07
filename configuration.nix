@@ -30,4 +30,6 @@
     layout = "us";
     variant = "";
   };
+
+  home-manager.backupFileExtension = "bak";
 }

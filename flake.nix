@@ -39,11 +39,13 @@
             ./hosts/PC.nix
             /etc/nixos/hardware-configuration.nix
             home-manager.nixosModules.home-manager
+	    nvf.nixosModules.default
           ];
         };
         Server = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            ./configuration.nix
             ./hosts/Server.nix
             /etc/nixos/hardware-configuration.nix
             home-manager.nixosModules.home-manager
