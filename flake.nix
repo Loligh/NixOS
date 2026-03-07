@@ -39,6 +39,7 @@
             ./hosts/PC.nix
             /etc/nixos/hardware-configuration.nix
             home-manager.nixosModules.home-manager
+	    nvf.nixosModules.default
           ];
         };
         Server = nixpkgs.lib.nixosSystem {
