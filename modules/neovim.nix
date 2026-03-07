@@ -2,7 +2,7 @@
 {
   environment.variables.EDITOR = "nvim";
 
-  #imports = [ inputs.nvf.nixosModules.default ];
+  imports = [ inputs.nvf.nixosModules.default ];
 
   programs.nvf = {
     enable = true;
@@ -50,6 +50,11 @@
             command = "lua vim.lsp.buf.format()";
           }
         ];
+
+        git = {
+          enable = true;
+          neogit.enable = true;
+        };
       };
     };
   };
