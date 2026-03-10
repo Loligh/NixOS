@@ -31,5 +31,6 @@
     ../modules/desktop/styling.nix
     ../modules/hardware/nvidia.nix
     ../modules/hardware/wooting.nix
+    ../modules/hardware/finalmouse.nix
   ];
 }

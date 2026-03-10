@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "finalmouse": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773178645,
+        "narHash": "sha256-ocGQIyGLS+nKDMwdnKTDCccc0KXbqGWV8DZfMMJmKfw=",
+        "owner": "Loligh",
+        "repo": "finalmouse-nix",
+        "rev": "88a270da3e52ffa0b149db5bc9f74b7e36b1bc06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Loligh",
+        "repo": "finalmouse-nix",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -189,6 +209,7 @@
     },
     "root": {
       "inputs": {
+        "finalmouse": "finalmouse",
         "home-manager": "home-manager",
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_2",

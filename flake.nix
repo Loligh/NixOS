@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    finalmouse = {
+      url = "github:Loligh/finalmouse-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
