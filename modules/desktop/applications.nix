@@ -9,7 +9,6 @@
 
     environment.systemPackages = with pkgs; [
       hyprshot
-      neovim
       ghostty
       chromium
       rofi
