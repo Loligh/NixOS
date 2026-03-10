@@ -7,7 +7,8 @@
     ./applications/zen.nix
   ];
 
-    environment.systemPackages = with pkgs; [
+  home-manager.users.benjamin = with pkgs; {
+    home.packages = [
       hyprshot
       ghostty
       chromium
@@ -23,6 +24,6 @@
       feh
       prismlauncher
     ];
-
+  };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
