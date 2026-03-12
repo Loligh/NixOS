@@ -3,6 +3,7 @@
   services.displayManager.ly.enable = true;
 
   environment.systemPackages = with pkgs; [
+    rofi
     quickshell
   ];
 }
