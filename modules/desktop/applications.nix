@@ -12,7 +12,6 @@
       hyprshot
       ghostty
       chromium
-      rofi
       cider-2
       mangohud
       obsidian
