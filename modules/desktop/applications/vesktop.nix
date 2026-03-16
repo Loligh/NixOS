@@ -54,7 +54,7 @@
           plugins = {
             AccountPanelServerProfile.enabled = true;
             AlwaysExpandRoles.enabled = true;
-            AlwaysTrust.enabled.enabled = true;
+            AlwaysTrust.enabled = true;
             AnonymiseFileNames.enabled = true;
             AutoDNDWhilePlaying.enabled = true; # not available in Vesktop
             BetterGifPicker.enabled = true;

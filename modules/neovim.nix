@@ -32,24 +32,17 @@
         };
 
         lsp.enable = true;
+        lsp.formatOnSave = true;
         languages = {
           enableTreesitter = true;
           enableFormat = true;
           enableExtraDiagnostics = true;
 
           nix.enable = true;
+          nix.format.type = [ "nixfmt" ];
+
           qml.enable = true;
         };
-
-        autocmds = [
-          {
-            event = [
-              "BufRead"
-              "BufWritePre"
-            ];
-            command = "lua vim.lsp.buf.format()";
-          }
-        ];
 
         git = {
           enable = true;

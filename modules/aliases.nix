@@ -3,8 +3,8 @@
   environment.shellAliases =
   {
     ff = "fastfetch";
-    rs = "cd /home/benjamin/NixOS && sudo nixos-rebuild switch --flake . --impure && cd -";
-    rsu = "cd /home/benjamin/NixOS && nix flake update && sudo nixos-rebuild switch --flake . --impure && cd -";
+    rs = "sudo nixos-rebuild switch --flake $HOME/NixOS --impure";
+    rsu = "nix flake update $HOME/NixOS && sudo nixos-rebuild switch --flake $HOME/NixOS --impure";
     gc = "nix-collect-garbage -d";
     try = "nix-shell -p";
   };
