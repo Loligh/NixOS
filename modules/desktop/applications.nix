@@ -22,6 +22,7 @@
       feh
       prismlauncher
       croc
+      claude-code
     ];
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # makes graphical apps use wayland instead of xwayland
