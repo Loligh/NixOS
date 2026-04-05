@@ -49,7 +49,7 @@
             home-manager.nixosModules.home-manager
           ];
         };
-        Server = nixpkgs.lib.nixosSystem {
+        server = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
