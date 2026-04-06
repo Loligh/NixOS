@@ -47,6 +47,7 @@
         git = {
           enable = true;
           neogit.enable = true;
+          neogit.mappings.open = "gs";
         };
       };
     };
