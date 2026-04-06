@@ -1,7 +1,9 @@
 { pkgs, lib, ... }:
 {
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
+
   networking.hostName = "server";
-  
+
   users.users.benjamin = {
     isNormalUser = true;
     description = "benjamin";
@@ -21,7 +23,8 @@
     ../modules/essentials.nix
     ../modules/git.nix
     ../modules/neovim.nix
-    ../modules/server/game-server/minecraft-server.nix
+    ../modules/network.nix
+    ../modules/server/ssh.nix
     ../modules/server/jellyfin.nix
   ];
 }
