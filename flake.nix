@@ -2,45 +2,47 @@
   description = "System Config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     nvf = {
       url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     finalmouse = {
       url = "github:Loligh/finalmouse-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
   outputs =
     inputs@{
       self,
-      nixpkgs,
+      nixpkgs-unstable,
+      nixpkgs-stable,
       home-manager,
       nvf,
       ...
     }:
     {
       nixosConfigurations = {
-        PC = nixpkgs.lib.nixosSystem {
+        PC = nixpkgs-unstable.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
@@ -49,7 +51,7 @@
             home-manager.nixosModules.home-manager
           ];
         };
-        server = nixpkgs.lib.nixosSystem {
+        server = nixpkgs-stable.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
