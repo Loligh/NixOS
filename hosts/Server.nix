@@ -7,6 +7,7 @@
     ../modules/git.nix
     ../modules/neovim.nix
     ../modules/network.nix
+    ../modules/server/autoUpgrade.nix
     ../modules/server/ssh.nix
     ../modules/server/jellyfin.nix
   ];
