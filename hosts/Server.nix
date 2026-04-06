@@ -4,19 +4,6 @@
 
   networking.hostName = "server";
 
-  users.users.benjamin = {
-    isNormalUser = true;
-    description = "benjamin";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-  };
-
-  home-manager.users.benjamin = {
-    home.stateVersion = "25.05";
-  };
-
   imports = [
     ../modules/bootloader/systemd-boot.nix
     ../modules/aliases.nix

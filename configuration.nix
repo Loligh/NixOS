@@ -10,6 +10,21 @@
 
   system.stateVersion = "25.05";
 
+  users.users.benjamin = {
+    isNormalUser = true;
+    description = "benjamin";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+  };
+
+  home-manager.users.benjamin = {
+    home.stateVersion = "25.05";
+  };
+
+  home-manager.backupFileExtension = "bak";
+
   time.timeZone = "Europe/Berlin";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -30,6 +45,4 @@
     layout = "us";
     variant = "";
   };
-
-  home-manager.backupFileExtension = "bak";
 }
