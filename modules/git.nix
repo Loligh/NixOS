@@ -9,6 +9,7 @@
           email = "erdle.benjamin@gmail.com";
         };
         init.defaultBranch = "main";
+        pull.rebase = true;
       };
     };
   };
