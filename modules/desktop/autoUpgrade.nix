@@ -9,7 +9,7 @@
     ];
     dates = "daily";
     operation = "boot";
-    system.autoUpgrade.runGarbageCollection = true;
+    runGarbageCollection = true;
   };
   nix.gc.options = "--delete-older-than 7d";
 }

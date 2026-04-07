@@ -14,7 +14,7 @@
       lower = "04:00";
       upper = "05:00";
     };
-    system.autoUpgrade.runGarbageCollection = true;
+    runGarbageCollection = true;
   };
   nix.gc.options = "--delete-older-than 7d";
 }
