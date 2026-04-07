@@ -23,6 +23,14 @@
       prismlauncher
       croc
       claude-code
+
+      # fun terminal apps
+      sl
+      asciiquarium
+      fortune
+      nyancat
+      cbonsai
+      neo
     ];
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # makes graphical apps use wayland instead of xwayland
