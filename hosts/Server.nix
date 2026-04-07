@@ -13,6 +13,7 @@
     ../modules/network.nix
     ../modules/server/autoUpgrade.nix
     ../modules/server/ssh.nix
+    ../modules/server/gitRemote.nix
     ../modules/server/jellyfin.nix
   ];
 }
