@@ -1,5 +1,12 @@
 { ... }:
 {
+  programs.git = {
+    enable = true;
+    config = {
+      init.defaultBranch = "main";
+    };
+  };
+
   home-manager.users.benjamin = {
     programs.git = {
       enable = true;
