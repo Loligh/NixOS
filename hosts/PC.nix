@@ -1,5 +1,7 @@
-{ ... }:
+{ pkgs, lib, ... }:
 {
+  networking.hostName = "PC";
+
   imports = [
     ../modules/aliases.nix
     ../modules/essentials.nix

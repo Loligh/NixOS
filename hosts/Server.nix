@@ -1,5 +1,9 @@
-{ ... }:
+{ pkgs, lib, ... }:
 {
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
+
+  networking.hostName = "server";
+
   imports = [
     ../modules/bootloader/systemd-boot.nix
     ../modules/aliases.nix

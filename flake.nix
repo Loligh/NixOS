@@ -43,7 +43,6 @@
     {
       nixosConfigurations = {
         PC = nixpkgs-unstable.lib.nixosSystem {
-          networking.hostName = "PC";
           specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
@@ -53,8 +52,6 @@
           ];
         };
         server = nixpkgs-stable.lib.nixosSystem {
-          services.logind.settings.Login.HandleLidSwitch = "ignore"; # only for laptops servers so i didn't bother with making it an actual module
-          networking.hostName = "server";
           specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
