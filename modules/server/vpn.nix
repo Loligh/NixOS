@@ -11,11 +11,21 @@
       privateKeyFile = "/srv/wireguard/privatekey";
       peers = [
         {
+          # Benjamin phone
           publicKey = "0WSxOMrb/0INi8TTn5IH65FXtMCUjojs1MkYy1TNsl4=";
-          allowedIPs = [
-            "10.10.10.2/32"
-          ];
+          allowedIPs = [ "10.10.10.10/32" ];
         }
+        {
+          # Benjamin pc (palceholder)
+          publicKey = "+ltPiOVJNTXDuRFg46XUf0ylRfmwVmPcAdQUuGU6RXg=";
+          allowedIPs = [ "10.10.10.11/32" ];
+        }
+        {
+          # Benjamin laptop (palceholder)
+          publicKey = "+ltPiOVJNTXDuRFg46XUf0ylRfmwVmPcAdQUuGU6RXg=";
+          allowedIPs = [ "10.10.10.12/32" ];
+        }
+
       ];
     };
   };
