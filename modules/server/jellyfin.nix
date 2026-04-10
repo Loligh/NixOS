@@ -1,9 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
-  networking.firewall.allowedTCPPorts = lib.mkAfter [ 8096 ];
-
   services.jellyfin = {
     enable = true;
+    openFirewall = true;
   };
   environment.systemPackages = with pkgs; [
     jellyfin
