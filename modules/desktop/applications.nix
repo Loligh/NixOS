@@ -25,6 +25,7 @@
       claude-code
 
       # fun terminal apps
+      cool-retro-term
       sl
       asciiquarium
       fortune
