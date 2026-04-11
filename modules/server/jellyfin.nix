@@ -3,6 +3,7 @@
   services.jellyfin = {
     enable = true;
     openFirewall = true;
+    dataDir = "/srv/jellyfin";
   };
   environment.systemPackages = with pkgs; [
     jellyfin
