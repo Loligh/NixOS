@@ -5,7 +5,7 @@
     paths = [ "/srv" ];
 
     timerConfig = {
-      OnCalendar = "03:30"; # 30 min before automatic system update
+      OnCalendar = "04:00"; # 30 min before automatic system update
       Persistent = true;
 
     };

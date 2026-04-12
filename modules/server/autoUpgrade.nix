@@ -7,11 +7,11 @@
       "--impure"
       #     "--commit-lock-file" # If you want to automatically commit the updated flake.lock
     ];
-    dates = "04:00";
+    dates = "04:30";
     operation = "switch";
     allowReboot = true;
     rebootWindow = {
-      lower = "04:00";
+      lower = "04:30";
       upper = "05:00";
     };
     runGarbageCollection = true;
