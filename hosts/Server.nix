@@ -16,6 +16,7 @@
     ../modules/server/ssh.nix
     ../modules/server/vpn.nix
     ../modules/server/gitRemote.nix
-    ../modules/server/jellyfin.nix
+    ../modules/server/streaming/jellyfin.nix
+    ../modules/server/streaming/mediaPermissions.nix
   ];
 }

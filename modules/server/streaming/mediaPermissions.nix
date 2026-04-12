@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   users.groups = {
-    media = {};
+    media = { };
   };
   users.users.jellyfin.extraGroups = [ "media" ];
 }
