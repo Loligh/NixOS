@@ -1,4 +1,9 @@
-{ lib, ... }:
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
 {
   networking.firewall.allowedUDPPorts = lib.mkAfter [ 51820 ];
 
@@ -8,7 +13,7 @@
       address = [
         "10.10.10.1/32"
       ];
-      privateKeyFile = "/srv/wireguard/privatekey";
+      privateKeyFile = config.age.secrets."wireguard/privatekey".path;
       peers = [
         {
           # Benjamin phone
@@ -27,6 +32,14 @@
         }
 
       ];
+    };
+  };
+
+  imports = [ inputs.agenix.nixosModules.default ];
+
+  age.secrets = {
+    "wireguard/privatekey" = {
+      file = ./secrets/wireguard/privatekey.age;
     };
   };
 }
