@@ -7,6 +7,7 @@
     createHome = true;
     shell = "${pkgs.git}/bin/git-shell";
     openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHgv0OuQSOVcYkSNDT2wmb/npBNgMzv+K0pVMFFzlQjS benjamin@PC"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPFaiM67gSUXGlYIonbhYK23uf0ihg3BzNaqEhsUkHEX benjamin@BenWindowsPC"
     ];
   };
