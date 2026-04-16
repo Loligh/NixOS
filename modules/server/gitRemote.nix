@@ -21,6 +21,7 @@
         AllowTcpForwarding no
         AllowAgentForwarding no
         PasswordAuthentication no
+        KbdInteractiveAuthentication no
         PermitTTY no
         X11Forwarding no
     '';
