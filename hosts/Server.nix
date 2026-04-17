@@ -13,6 +13,7 @@
     ../modules/network.nix
     ../modules/server/autoUpgrade.nix
     ../modules/server/backup.nix
+    ../modules/server/hardware-configuration.nix
     ../modules/server/ssh.nix
     ../modules/server/vpn.nix
     ../modules/server/gitRemote.nix
