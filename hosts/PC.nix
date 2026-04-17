@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 {
   networking.hostName = "PC";
 
@@ -13,6 +13,7 @@
     ../modules/desktop/audio.nix
     ../modules/desktop/defaultApps.nix
     ../modules/desktop/gaming.nix
+    ../modules/desktop/hardware-configuration.nix
     ../modules/desktop/hyprland.nix
     ../modules/desktop/shell.nix
     ../modules/desktop/styling.nix

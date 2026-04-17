@@ -50,7 +50,6 @@
           modules = [
             ./configuration.nix
             ./hosts/PC.nix
-            /etc/nixos/hardware-configuration.nix
             inputs.home-manager.nixosModules.home-manager
           ];
         };
