@@ -1,5 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+
   environment.shellAliases = {
     ff = "fastfetch";
     lg = "lazygit";

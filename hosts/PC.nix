@@ -3,11 +3,11 @@
   networking.hostName = "PC";
 
   imports = [
-    ../modules/aliases.nix
     ../modules/essentials.nix
     ../modules/git.nix
     ../modules/neovim.nix
     ../modules/network.nix
+    ../modules/aliases.nix
     ../modules/bootloader/grub.nix
     ../modules/desktop/applications.nix
     ../modules/desktop/audio.nix
