@@ -7,7 +7,7 @@
     ../modules/git.nix
     ../modules/neovim.nix
     ../modules/network.nix
-    ../modules/aliases.nix
+    ../modules/shell.nix
     ../modules/bootloader/grub.nix
     ../modules/desktop/applications.nix
     ../modules/desktop/audio.nix
