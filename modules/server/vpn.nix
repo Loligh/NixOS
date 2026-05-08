@@ -8,7 +8,7 @@
   networking.firewall.allowedUDPPorts = lib.mkAfter [ 51820 ];
 
   networking.wg-quick.interfaces = {
-    wg0 = {
+    wg-home = {
       listenPort = 51820;
       address = [
         "10.10.10.1/32"
@@ -21,8 +21,8 @@
           allowedIPs = [ "10.10.10.10/32" ];
         }
         {
-          # Benjamin pc (palceholder)
-          publicKey = "+ltPiOVJNTXDuRFg46XUf0ylRfmwVmPcAdQUuGU6RXg=";
+          # Benjamin pc
+          publicKey = "qVZaFOxaXypYLNiiWNwi1U8WZ/8AofVVsgBWK/EiG04=";
           allowedIPs = [ "10.10.10.11/32" ];
         }
         {
