@@ -54,7 +54,7 @@
           modules = [
             ./configuration.nix
             ./hosts/PC.nix
-            inputs.home-manager.nixosModules.home-manager
+            inputs.home-manager-unstable.nixosModules.home-manager
           ];
         };
         server = nixpkgs-stable.lib.nixosSystem {
@@ -62,7 +62,7 @@
           modules = [
             ./configuration.nix
             ./hosts/Server.nix
-            inputs.home-manager.nixosModules.home-manager
+            inputs.home-manager-stable.nixosModules.home-manager
           ];
         };
       };
