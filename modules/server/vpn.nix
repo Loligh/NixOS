@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  self,
   lib,
   ...
 }:
@@ -39,7 +40,7 @@
 
   age.secrets = {
     "wireguard/privatekey" = {
-      file = ./secrets/wireguard/privatekey.age;
+      file = self + /secrets/wireguard/privatekey.age;
     };
   };
 }

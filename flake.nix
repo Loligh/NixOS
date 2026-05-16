@@ -46,7 +46,7 @@
     {
       nixosConfigurations = {
         PC = nixpkgs-unstable.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit self inputs; };
           modules = [
             ./configuration.nix
             ./hosts/PC.nix
@@ -54,7 +54,7 @@
           ];
         };
         server = nixpkgs-stable.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit self inputs; };
           modules = [
             ./configuration.nix
             ./hosts/Server.nix
