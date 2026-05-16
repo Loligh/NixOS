@@ -8,9 +8,9 @@ let
   all = users ++ systems;
 in
 {
-  "restic/repo_password.age".publicKeys = all;
-  "restic/repo_url.age".publicKeys = all;
-  "restic/repo_credentials.age".publicKeys = all;
+  "server/restic/repo_password.age".publicKeys = all;
+  "server/restic/repo_url.age".publicKeys = all;
+  "server/restic/repo_credentials.age".publicKeys = all;
 
-  "wireguard/privatekey.age".publicKeys = all;
+  "server/wireguard/privatekey.age".publicKeys = all;
 }

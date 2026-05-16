@@ -1,4 +1,9 @@
-{ inputs, config, ... }:
+{
+  self,
+  inputs,
+  config,
+  ...
+}:
 {
   services.restic.backups.service-state = {
 
@@ -28,13 +33,13 @@
 
   age.secrets = {
     "restic/repo_password" = {
-      file = ./secrets/restic/repo_password.age;
+      file = self + /secrets/server/restic/repo_password.age;
     };
     "restic/repo_url" = {
-      file = ./secrets/restic/repo_url.age;
+      file = self + /secrets/server/restic/repo_url.age;
     };
     "restic/repo_credentials" = {
-      file = ./secrets/restic/repo_credentials.age;
+      file = self + /secrets/server/restic/repo_credentials.age;
     };
   };
 }
