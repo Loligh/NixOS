@@ -17,6 +17,7 @@
     ../modules/desktop/hyprland.nix
     ../modules/desktop/shell.nix
     ../modules/desktop/styling.nix
+    ../modules/desktop/vpn.nix
     ../modules/hardware/nvidia.nix
     ../modules/hardware/wooting.nix
     ../modules/hardware/finalmouse.nix

@@ -13,4 +13,6 @@ in
   "server/restic/repo_credentials.age".publicKeys = all;
 
   "server/wireguard/privatekey.age".publicKeys = all;
+
+  "PC/wireguard/privatekey.age".publicKeys = [ benjamin ];
 }

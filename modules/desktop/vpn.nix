@@ -25,6 +25,7 @@
 
   imports = [ inputs.agenix.nixosModules.default ];
 
+  age.identityPaths = [ "/home/benjamin/.ssh/id_ed25519" ];
   age.secrets = {
     "wireguard/privatekey" = {
       file = self + /secrets/PC/wireguard/privatekey.age;
