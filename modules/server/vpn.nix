@@ -18,7 +18,7 @@
       peers = [
         {
           # Benjamin phone
-          publicKey = "0WSxOMrb/0INi8TTn5IH65FXtMCUjojs1MkYy1TNsl4=";
+          publicKey = "It6KoBA1vILN5trVVQtioeJL6tclIsUGG3JqeLUCN1w=";
           allowedIPs = [ "10.10.10.10/32" ];
         }
         {
