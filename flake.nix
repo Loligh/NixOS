@@ -57,6 +57,14 @@
             inputs.home-manager-unstable.nixosModules.home-manager
           ];
         };
+        Laptop = nixpkgs-unstable.lib.nixosSystem {
+          specialArgs = { inherit self inputs; };
+          modules = [
+            ./configuration.nix
+            ./hosts/Laptop.nix
+            inputs.home-manager-unstable.nixosModules.home-manager
+          ];
+        };
         server = nixpkgs-stable.lib.nixosSystem {
           specialArgs = { inherit self inputs; };
           modules = [

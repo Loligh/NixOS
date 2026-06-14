@@ -8,15 +8,15 @@
   networking.wg-quick.interfaces = {
     wg-home = {
       address = [
-        "10.10.10.11/32"
+        "10.0.0.13/32"
       ];
       privateKeyFile = config.age.secrets."wireguard/privatekey".path;
-      dns = [ "10.10.10.1" ];
+      dns = [ "10.0.0.1" ];
       peers = [
         {
-          # Benjamin phone
+          # homeserver
           publicKey = "/cAMp62EM3keUWaGAHbgdnBFgZ9dMPDDL9x5U9Qufyc=";
-          allowedIPs = [ "10.10.10.1/32" ];
+          allowedIPs = [ "10.0.0.1/32" ];
           endpoint = "31.19.182.11:51820";
         }
       ];
@@ -28,7 +28,7 @@
   age.identityPaths = [ "/home/benjamin/.ssh/id_ed25519" ];
   age.secrets = {
     "wireguard/privatekey" = {
-      file = self + /secrets/PC/wireguard/privatekey.age;
+      file = self + /secrets/Laptop/wireguard/privatekey.age;
     };
   };
 }

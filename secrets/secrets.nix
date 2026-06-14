@@ -15,4 +15,5 @@ in
   "server/wireguard/privatekey.age".publicKeys = all;
 
   "PC/wireguard/privatekey.age".publicKeys = [ benjamin ];
+  "Laptop/wireguard/privatekey.age".publicKeys = [ benjamin ];
 }
