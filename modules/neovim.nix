@@ -42,6 +42,8 @@
           nix.format.type = [ "nixfmt" ];
 
           qml.enable = true;
+
+          lua.enable = true;
         };
 
         git = {

@@ -7,4 +7,24 @@
     enable = true;
     enable32Bit = true;
   };
+  home-manager.users.benjamin = {
+    wayland.windowManager.hyprland = {
+      settings = {
+        env = [
+          {
+            _args = [
+              "LIBVA_DRIVER_NAME"
+              "nvidia"
+            ];
+          }
+          {
+            _args = [
+              "__GLX_VENDOR_LIBRARY_NAME"
+              "nvidia"
+            ];
+          }
+        ];
+      };
+    };
+  };
 }
