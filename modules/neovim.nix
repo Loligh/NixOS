@@ -31,8 +31,10 @@
           lualine.enable = true;
         };
 
+        autocomplete.blink-cmp.enable = true;
         lsp.enable = true;
         lsp.formatOnSave = true;
+
         languages = {
           enableTreesitter = true;
           enableFormat = true;
