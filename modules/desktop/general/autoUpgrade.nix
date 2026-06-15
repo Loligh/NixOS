@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   system.autoUpgrade = {
-    enable = true;
+    enable = false; # !!!
     flake = inputs.self.outPath;
     flags = [
       "--impure"
@@ -11,5 +11,7 @@
     operation = "boot";
     runGarbageCollection = true;
   };
-  nix.gc.options = "--delete-older-than 7d";
+  # nix.gc.options = "--delete-older-than 7d";
+
+  services.fwupd.enable = true;
 }
