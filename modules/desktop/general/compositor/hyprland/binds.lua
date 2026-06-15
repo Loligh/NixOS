@@ -1,7 +1,7 @@
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("ghostty"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("ghostty -e yazi"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("zen"))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("rofi -show run"))
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("rofi -show drun"))
 
 hl.bind("SUPER + ESCAPE", hl.dsp.window.close(activewindow))
 hl.bind("SUPER + ALT + 4", hl.dsp.window.kill(activewindow))

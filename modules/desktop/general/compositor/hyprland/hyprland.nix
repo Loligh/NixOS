@@ -13,6 +13,10 @@
           vrr = 1;
           bitdepth = 8;
         };
+        device = {
+          name = "chicony-acer-tablet-keyboard";
+
+        };
         config = {
           general = {
             border_size = 0;
@@ -62,6 +66,37 @@
               sharp = false;
               #offset = "0. 43";
             };
+            glow = {
+              enabled = true;
+              range = 10;
+              render_power = 3;
+              color = "0xee1a1a1a";
+            };
+            motion_blur = {
+              enabled = false;
+              samples = 7;
+            };
+          };
+          animations = {
+            enabled = true;
+            workspace_wraparound = false;
+          };
+          input = {
+            repeat_rate = 25;
+            repeat_delay = 600;
+            sensitivity = 0.0;
+            accel_profile = "flat";
+            touchpad = {
+              disable_while_typing = true;
+              natural_scroll = true;
+              scroll_factor = 1.0;
+              middle_button_emulation = false;
+            };
+          };
+          gesture = {
+            fingers = 3;
+            direction = "horizontal";
+            action = "workspace";
           };
         };
       };
@@ -69,7 +104,7 @@
         hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("ghostty"))
         hl.bind("SUPER + E", hl.dsp.exec_cmd("ghostty -e yazi"))
         hl.bind("SUPER + B", hl.dsp.exec_cmd("zen"))
-        hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("rofi -show run"))
+        hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("rofi -show drun"))
 
         hl.bind("SUPER + ESCAPE", hl.dsp.window.close(activewindow))
         hl.bind("SUPER + ALT + 4", hl.dsp.window.kill(activewindow))
@@ -111,9 +146,8 @@
         hl.bind("SUPER + SHIFT + O", hl.dsp.window.move({ workspace = "2", follow = false }))
         hl.bind("SUPER + SHIFT + P", hl.dsp.window.move({ workspace = "3", follow = false }))
 
-        hl.workspace_rule({ workspace = "special:music", gaps_out = 100, no_border = true, on_created_empty = "cider-2"})
+        hl.workspace_rule({ workspace = "special:music", gaps_out = 100, no_border = true, persistent = false, on_created_empty = "ghostty"})
         hl.bind("SUPER + M", hl.dsp.workspace.toggle_special("special:music"))
-
       '';
     };
   };

@@ -9,6 +9,7 @@
     ../modules/hardware/keyboard-layouts/de.nix
     ../modules/hardware/gpu.nix
     ../modules/desktop/Laptop/hardware-configuration.nix
+    ../modules/desktop/Laptop/power-optimization.nix
     ../modules/desktop/Laptop/vpn.nix
   ];
 }
