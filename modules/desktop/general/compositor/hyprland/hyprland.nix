@@ -15,7 +15,7 @@
         };
         device = {
           name = "chicony-acer-tablet-keyboard";
-
+          kb_layout = "de";
         };
         config = {
           general = {
@@ -67,7 +67,7 @@
               #offset = "0. 43";
             };
             glow = {
-              enabled = true;
+              enabled = false;
               range = 10;
               render_power = 3;
               color = "0xee1a1a1a";
@@ -93,10 +93,15 @@
               middle_button_emulation = false;
             };
           };
-          gesture = {
-            fingers = 3;
-            direction = "horizontal";
-            action = "workspace";
+          #gesture = {
+          #  fingers = 3;
+          #  direction = "horizontal";
+          #  action = "workspace";
+          #};
+          curve = {
+            test = {
+              type = "spring";
+            };
           };
         };
       };

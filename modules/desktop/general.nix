@@ -12,6 +12,6 @@
     ./general/gaming.nix
     ./general/shell.nix
     ./general/compositor/styling.nix
-    ./general/compositor/hyprland/hyprland.nix
+    ./general/compositor/hyprland.nix
   ];
 }
