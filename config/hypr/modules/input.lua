@@ -17,3 +17,7 @@ hl.device({
 	name = "chicony-acer-tablet-keyboard",
 	kb_layout = "de",
 })
+hl.device({
+	name = "chicony-acer-tablet-keyboard-2",
+	kb_layout = "de",
+})
