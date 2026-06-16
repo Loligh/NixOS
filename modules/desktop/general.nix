@@ -15,5 +15,6 @@
     ./general/shell.nix
     ./general/compositor/styling.nix
     ./general/compositor/hyprland.nix
+    ./general/vpn.nix
   ];
 }
