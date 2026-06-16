@@ -9,6 +9,7 @@
     ./general/applications.nix
     ./general/audio.nix
     ./general/autoUpgrade.nix
+    ./general/bluetooth.nix
     ./general/defaultApps.nix
     ./general/gaming.nix
     ./general/shell.nix
