@@ -6,6 +6,7 @@
     ../neovim.nix
     ../network.nix
     ../shell.nix
+    ../vpn.nix
     ./general/applications.nix
     ./general/audio.nix
     ./general/autoUpgrade.nix
@@ -15,6 +16,5 @@
     ./general/shell.nix
     ./general/compositor/styling.nix
     ./general/compositor/hyprland.nix
-    ./general/vpn.nix
   ];
 }
