@@ -10,6 +10,8 @@
     ../modules/hardware/gpu.nix
     ../modules/desktop/Laptop/hardware-configuration.nix
     ../modules/desktop/Laptop/power-optimization.nix
-    ../modules/desktop/Laptop/vpn.nix
+    ../modules/desktop/Laptop/airvpn.nix
+    #    ../modules/desktop/Laptop/wireguard-home.nix
+    #    ../modules/desktop/Laptop/wireguard-vpn.nix
   ];
 }
