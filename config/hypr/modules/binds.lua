@@ -22,10 +22,10 @@ hl.bind("SUPER + SHIFT + J", hl.dsp.window.swap({ direction = "d" }))
 hl.bind("SUPER + SHIFT + K", hl.dsp.window.swap({ direction = "u" }))
 hl.bind("SUPER + SHIFT + L", hl.dsp.window.swap({ direction = "r" }))
 
-hl.bind("SUPER + ALT + H", hl.dsp.window.resize({ x = -10, y = 0 }))
-hl.bind("SUPER + ALT + J", hl.dsp.window.resize({ x = 0, y = -10 }))
-hl.bind("SUPER + ALT + K", hl.dsp.window.resize({ x = 0, y = 10 }))
-hl.bind("SUPER + ALT + L", hl.dsp.window.resize({ x = 10, y = 0 }))
+hl.bind("SUPER + ALT + H", hl.dsp.window.resize({ x = -20, y = 0, relative = true }), { repeating = true })
+hl.bind("SUPER + ALT + J", hl.dsp.window.resize({ x = 0, y = 20, relative = true }), { repeating = true })
+hl.bind("SUPER + ALT + K", hl.dsp.window.resize({ x = 0, y = -20, relative = true }), { repeating = true })
+hl.bind("SUPER + ALT + L", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })
 
 hl.bind("SUPER + I", hl.dsp.focus({ workspace = 1 }))
 hl.bind("SUPER + O", hl.dsp.focus({ workspace = 2 }))
@@ -35,6 +35,13 @@ hl.bind("SUPER + SHIFT + I", hl.dsp.window.move({ workspace = "1", follow = true
 hl.bind("SUPER + SHIFT + O", hl.dsp.window.move({ workspace = "2", follow = true }))
 hl.bind("SUPER + SHIFT + P", hl.dsp.window.move({ workspace = "3", follow = true }))
 
-hl.bind("SUPER + SHIFT + I", hl.dsp.window.move({ workspace = "1", follow = false }))
-hl.bind("SUPER + SHIFT + O", hl.dsp.window.move({ workspace = "2", follow = false }))
-hl.bind("SUPER + SHIFT + P", hl.dsp.window.move({ workspace = "3", follow = false }))
+hl.bind("SUPER + SHIFT + ALT + I", hl.dsp.window.move({ workspace = "1", follow = false }))
+hl.bind("SUPER + SHIFT + ALT + O", hl.dsp.window.move({ workspace = "2", follow = false }))
+hl.bind("SUPER + SHIFT + ALT + P", hl.dsp.window.move({ workspace = "3", follow = false }))
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
+
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
