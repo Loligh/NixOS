@@ -14,6 +14,10 @@ in
 
   "server/wireguard/privatekey.age".publicKeys = all;
 
-  "PC/wireguard/privatekey.age".publicKeys = [ benjamin ];
-  "Laptop/wireguard/privatekey.age".publicKeys = [ benjamin ];
+  "PC/wireguard/privatekey.age".publicKeys = [ benjamin ]; # legacy
+  "desktop/PC/wireguard/home/privatekey.age".publicKeys = [ benjamin ];
+
+  "desktop/Laptop/wireguard/home/privatekey.age".publicKeys = [ benjamin ];
+  "desktop/Laptop/wireguard/vpn/privatekey.age".publicKeys = [ benjamin ];
+  "desktop/Laptop/wireguard/vpn/presharedkey.age".publicKeys = [ benjamin ];
 }

@@ -10,14 +10,14 @@
       address = [
         "10.0.0.13/32"
       ];
-      privateKeyFile = config.age.secrets."wireguard/privatekey".path;
+      privateKeyFile = config.age.secrets."wireguard/home/privatekey".path;
       dns = [ "10.0.0.1" ];
       peers = [
         {
           # homeserver
           publicKey = "/cAMp62EM3keUWaGAHbgdnBFgZ9dMPDDL9x5U9Qufyc=";
-          allowedIPs = [ "10.0.0.1/32" ];
           endpoint = "31.19.182.11:51820";
+          allowedIPs = [ "10.0.0.1/32" ];
         }
       ];
     };
@@ -27,8 +27,8 @@
 
   age.identityPaths = [ "/home/benjamin/.ssh/id_ed25519" ];
   age.secrets = {
-    "wireguard/privatekey" = {
-      file = self + /secrets/Laptop/wireguard/privatekey.age;
+    "wireguard/home/privatekey" = {
+      file = self + /secrets/desktop/Laptop/wireguard/home/privatekey.age;
     };
   };
 }
