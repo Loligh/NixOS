@@ -9,8 +9,8 @@ hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = to
 hl.bind("SUPER + D", hl.dsp.window.float({ mode = "fullscreen", action = toggle }))
 hl.bind("SUPER + BACKSLASH", hl.dsp.layout("togglesplit"))
 
-hl.bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("ALT + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 hl.bind("SUPER + H", hl.dsp.focus({ direction = "l" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
