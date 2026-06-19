@@ -12,7 +12,8 @@ in
   "server/restic/repo_url.age".publicKeys = all;
   "server/restic/repo_credentials.age".publicKeys = all;
 
-  "server/wireguard/privatekey.age".publicKeys = all;
+  "server/wireguard/privatekey.age".publicKeys = all; # legacy
+  "server/wireguard/home/privatekey.age".publicKeys = all;
 
   "PC/wireguard/privatekey.age".publicKeys = [ benjamin ]; # legacy
   "desktop/PC/wireguard/home/privatekey.age".publicKeys = [ benjamin ];
@@ -20,4 +21,6 @@ in
   "desktop/Laptop/wireguard/home/privatekey.age".publicKeys = [ benjamin ];
   "desktop/Laptop/wireguard/vpn/privatekey.age".publicKeys = [ benjamin ];
   "desktop/Laptop/wireguard/vpn/presharedkey.age".publicKeys = [ benjamin ];
+
+  "desktop/general/ssh/work/id_ed25519.age".publicKeys = [ benjamin ];
 }
