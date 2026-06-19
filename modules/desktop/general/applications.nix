@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./applications/ghostty.nix
     ./applications/obs.nix
     ./applications/vesktop.nix
     ./applications/zen.nix
