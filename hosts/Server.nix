@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 {
   services.logind.settings.Login.HandleLidSwitch = "ignore";
 

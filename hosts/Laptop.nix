@@ -11,7 +11,8 @@
     ../modules/desktop/Laptop/hardware-configuration.nix
     ../modules/desktop/Laptop/power-optimization.nix
     ../modules/desktop/Laptop/airvpn.nix
-    #    ../modules/desktop/Laptop/wireguard-home.nix
+    ../modules/desktop/Laptop/suspend.nix
+    ../modules/desktop/Laptop/wireguard-home.nix
     #    ../modules/desktop/Laptop/wireguard-vpn.nix
   ];
 }
