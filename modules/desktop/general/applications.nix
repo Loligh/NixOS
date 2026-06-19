@@ -23,6 +23,7 @@
       prismlauncher
       croc
       claude-code
+      teams-for-linux
 
       # fun terminal apps
       cool-retro-term
