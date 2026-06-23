@@ -16,7 +16,7 @@
         {
           # homeserver
           publicKey = "/cAMp62EM3keUWaGAHbgdnBFgZ9dMPDDL9x5U9Qufyc=";
-          endpoint = "31.19.182.11:51820";
+          endpoint = "becae.org:51820";
           allowedIPs = [ "10.0.0.1/32" ];
         }
       ];
