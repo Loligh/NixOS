@@ -2,9 +2,12 @@
 {
   networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8096 ];
 
+  services.caddy.virtualHosts."stream.becae.org".extraConfig = ''
+    reverse_proxy 127.0.0.1:8096
+  '';
+
   services.jellyfin = {
     enable = true;
-    openFirewall = false;
     dataDir = "/srv/jellyfin";
     hardwareAcceleration = {
       enable = true;
