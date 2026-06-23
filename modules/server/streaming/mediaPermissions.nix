@@ -1,7 +1,10 @@
 { ... }:
 {
-  users.groups = {
-    media = { };
+  users.groups.media = {
+    members = [
+      "jellyfin"
+      "radarr"
+      "sonarr"
+    ];
   };
-  users.users.jellyfin.extraGroups = [ "media" ];
 }
