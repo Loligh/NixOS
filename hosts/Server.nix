@@ -20,5 +20,6 @@
     ../modules/server/gitRemote.nix
     ../modules/server/streaming/jellyfin.nix
     ../modules/server/streaming/mediaPermissions.nix
+    ../modules/hardware/gpu.nix
   ];
 }

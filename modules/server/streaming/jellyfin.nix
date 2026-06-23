@@ -6,6 +6,11 @@
     enable = true;
     openFirewall = false;
     dataDir = "/srv/jellyfin";
+    hardwareAcceleration = {
+      enable = true;
+      type = "vaapi";
+      device = "/dev/dri/renderD128";
+    };
   };
   environment.systemPackages = with pkgs; [
     jellyfin
