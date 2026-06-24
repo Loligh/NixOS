@@ -46,6 +46,8 @@
           qml.enable = true;
 
           lua.enable = true;
+
+          java.enable = true;
         };
 
         git = {
