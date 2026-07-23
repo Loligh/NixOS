@@ -13,7 +13,6 @@
     ../modules/shell.nix
     ../modules/server/autoUpgrade.nix
     ../modules/server/backup.nix
-    ../modules/server/dns.nix
     ../modules/server/hardware-configuration.nix
     ../modules/server/home-assistant.nix
     ../modules/server/reverseProxy.nix
