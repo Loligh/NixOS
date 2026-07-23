@@ -1,6 +1,6 @@
 { config, lib, ... }:
 {
-  #networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8123 ];
+  networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8123 ];
 
   services.caddy.virtualHosts = {
     "home.vpn.becae.org".extraConfig = ''
