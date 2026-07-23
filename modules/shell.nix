@@ -12,5 +12,6 @@
     rsu = "nix flake update --flake $HOME/NixOS && sudo nixos-rebuild switch --flake $HOME/NixOS";
     gc = "nix-collect-garbage -d";
     try = "nix-shell -p";
+    ssh = "ghostty +ssh --";
   };
 }
