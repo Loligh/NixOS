@@ -6,7 +6,7 @@
   ];
 
   services.caddy = {
-    enable = false;
+    enable = true;
     openFirewall = false;
   };
 }

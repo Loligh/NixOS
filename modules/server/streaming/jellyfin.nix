@@ -1,12 +1,13 @@
 { pkgs, lib, ... }:
 {
-  networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8096 ];
+  #networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8096 ];
 
   services.caddy.virtualHosts = {
     "stream.becae.org".extraConfig = ''
       reverse_proxy localhost:8096
     '';
     "stream.vpn.becae.org".extraConfig = ''
+      tls internal
       reverse_proxy localhost:8096
     '';
   };
