@@ -11,7 +11,7 @@
         "10.0.0.13/32"
       ];
       privateKeyFile = config.age.secrets."wireguard/home/privatekey".path;
-      dns = [ "10.0.0.1" ];
+      #dns = [ "10.0.0.1" ];
       peers = [
         {
           # homeserver
