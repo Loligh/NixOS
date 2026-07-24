@@ -1,17 +1,19 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   home-manager.users.benjamin = {
-    home.packages = [
-      pkgs.hyprcursor
-    ];
     home.pointerCursor = {
       enable = true;
-      hyprcursor.enable = true;
+      hyprcursor.enable = false;
       x11.enable = true;
       gtk.enable = true;
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 32;
+    };
+    home.sessionVariables = {
+      XCURSOR_SIZE = "32";
+      HYPRCURSOR_SIZE = "32";
+      XCURSOR_THEME = "Bibata-Modern-Classic";
     };
     gtk = {
       enable = true;

@@ -11,4 +11,9 @@
       proton-ge-bin
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    xsettingsd
+    xrdb
+  ];
 }
