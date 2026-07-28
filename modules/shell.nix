@@ -12,6 +12,6 @@
     rsu = "nix flake update --flake $HOME/NixOS && sudo nixos-rebuild switch --flake $HOME/NixOS";
     gc = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
     try = "nix-shell -p";
-    ssh = "ghostty +ssh --";
+    #ssh = "ghostty +ssh --"; apparently doesnt exist anymore
   };
 }
