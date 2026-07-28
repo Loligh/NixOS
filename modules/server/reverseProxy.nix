@@ -7,6 +7,12 @@
 
   services.caddy = {
     enable = true;
-    openFirewall = false;
+    openFirewall = true;
+
+    virtualHosts = {
+      "becae.org".extraConfig = ''
+        respond "connected"
+      '';
+    };
   };
 }
