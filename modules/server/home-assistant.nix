@@ -3,16 +3,29 @@
   networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8123 ];
 
   services.caddy.virtualHosts = {
-    "home.vpn.becae.org".extraConfig = ''
-      tls internal
+    "home.becae.org".extraConfig = ''
       reverse_proxy localhost:8123
     '';
   };
 
   services.home-assistant = {
     enable = true;
-    config = null;
-    lovelaceConfig = null;
+    config = {
+      default_config = { };
+      frontend = {
+        themes = "!include_dir_merge_named themes";
+      };
+      automation = "!include automations.yaml";
+      script = "!include scripts.yaml";
+      scene = "!include scenes.yaml";
+      http = {
+        use_x_forwarded_for = true;
+        trusted_proxies = [
+          "::1"
+          "127.0.0.1"
+        ];
+      };
+    };
     configDir = "/srv/home-assistant";
     extraComponents = [
       "ssdp"
@@ -29,6 +42,7 @@
       "analytics"
       "google_translate"
       "met"
+      "radio_browser"
       "shopping_list"
     ];
 
