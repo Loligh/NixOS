@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 {
   networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8123 ];
 
@@ -24,6 +24,7 @@
       "default_config"
       "isal"
       "mobile_app"
+      "esphome"
 
       "analytics"
       "google_translate"
