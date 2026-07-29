@@ -5,6 +5,6 @@
     dataDir = "/srv/terraria";
     noUPnP = true;
     openFirewall = true;
-    password = "leckmeineeier";
+    password = "";
   };
 }

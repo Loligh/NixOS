@@ -29,7 +29,6 @@
       "analytics"
       "google_translate"
       "met"
-      "radio_browser"
       "shopping_list"
     ];
 
