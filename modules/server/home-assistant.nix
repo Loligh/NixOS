@@ -35,6 +35,7 @@
       "default_config"
       "isal"
       "mobile_app"
+      "music_assistant"
       "esphome"
 
       "analytics"

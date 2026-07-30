@@ -15,6 +15,7 @@
     ../modules/server/backup.nix
     ../modules/server/hardware-configuration.nix
     ../modules/server/home-assistant.nix
+    ../modules/server/music-assistant.nix
     ../modules/server/reverseProxy.nix
     ../modules/server/ssh.nix
     ../modules/server/vpn.nix
