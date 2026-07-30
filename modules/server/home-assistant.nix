@@ -1,7 +1,5 @@
-{ lib, ... }:
+{ ... }:
 {
-  networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [ 8123 ];
-
   services.caddy.virtualHosts = {
     "home.becae.org".extraConfig = ''
       reverse_proxy localhost:8123
