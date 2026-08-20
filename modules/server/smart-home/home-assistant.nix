@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.caddy.virtualHosts = {
     "home.becae.org".extraConfig = ''
@@ -32,12 +32,16 @@
       "music_assistant"
       "webostv"
       "esphome"
+      "tuya"
 
       "analytics"
       "google_translate"
       "met"
       "radio_browser"
       "shopping_list"
+    ];
+    customComponents = with pkgs.home-assistant-custom-components; [
+      tuya_local
     ];
 
   };
