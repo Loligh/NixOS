@@ -23,4 +23,6 @@ in
   "desktop/Laptop/wireguard/vpn/presharedkey.age".publicKeys = [ benjamin ];
 
   "desktop/general/ssh/work/id_ed25519.age".publicKeys = [ benjamin ];
+
+  "server/firefly/appkey.age".publicKeys = all;
 }

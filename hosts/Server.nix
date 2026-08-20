@@ -13,6 +13,7 @@
     ../modules/shell.nix
     ../modules/server/autoUpgrade.nix
     ../modules/server/backup.nix
+    ../modules/server/finance.nix
     ../modules/server/hardware-configuration.nix
     ../modules/server/reverseProxy.nix
     ../modules/server/ssh.nix
