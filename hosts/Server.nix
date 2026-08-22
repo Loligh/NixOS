@@ -23,8 +23,8 @@
     ../modules/server/smart-home/home-assistant.nix
     ../modules/server/smart-home/music-assistant.nix
     ../modules/server/streaming/jellyfin.nix
-    ../modules/server/streaming/mediaPermissions.nix
-    #../modules/server/streaming/torrenting.nix
+    ../modules/server/streaming/permissions.nix
+    ../modules/server/streaming/torrenting.nix
     ../modules/hardware/gpu.nix
   ];
 }

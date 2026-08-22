@@ -2,22 +2,94 @@
   self,
   inputs,
   config,
-  lib,
   ...
 }:
 {
-  networking.firewall.interfaces."wg-home".allowedTCPPorts = lib.mkAfter [
-    8080
-    9696
-    7878
-    8989
-  ];
+  services.caddy.virtualHosts = {
+    "torrent.becae.org".extraConfig = ''
+      reverse_proxy 10.0.1.2:8080
+    '';
+    "indexers.becae.org".extraConfig = ''
+      reverse_proxy localhost:9696
+    '';
+    "movies.becae.org".extraConfig = ''
+      reverse_proxy localhost:7878
+    '';
+    "shows.becae.org".extraConfig = ''
+      reverse_proxy localhost:8989
+    '';
+  };
+
+  networking.nat = {
+    enable = true;
+    enableIPv6 = true;
+    externalInterface = "enp6s0";
+    internalInterfaces = [ "ve-+" ];
+  };
+
+  containers.torrent = {
+    autoStart = true;
+    privateNetwork = true;
+    enableTun = true;
+    hostAddress = "10.0.1.1";
+    localAddress = "10.0.1.2";
+    bindMounts = {
+      "downloads" = {
+        hostPath = "/torrents";
+        mountPoint = "/downloads";
+        isReadOnly = false;
+      };
+      "dataDir" = {
+        hostPath = "/srv/qbittorrent";
+        mountPoint = "/srv/qbittorrent";
+        isReadOnly = false;
+      };
+      "wg-privatekey" = {
+        hostPath = config.age.secrets."wireguard/vpn/privatekey".path;
+        mountPoint = config.age.secrets."wireguard/vpn/privatekey".path;
+        isReadOnly = true;
+      };
+      "wg-presharedkey" = {
+        hostPath = config.age.secrets."wireguard/vpn/presharedkey".path;
+        mountPoint = config.age.secrets."wireguard/vpn/presharedkey".path;
+        isReadOnly = true;
+      };
+    };
+    config = {
+      networking.firewall.allowedTCPPorts = [ 8080 ];
+      services.qbittorrent = {
+        enable = true;
+        profileDir = "/srv/qbittorrent/";
+      };
+      networking.wg-quick.interfaces = {
+        airvpn = {
+          address = [
+            "10.139.129.245/32"
+            "fd7d:76ee:e68f:a993:fe7d:96c6:93:e065/128"
+          ];
+          privateKeyFile = config.age.secrets."wireguard/vpn/privatekey".path;
+          dns = [
+            "10.128.0.1"
+            "fd7d:76ee:e68f:a993::1"
+          ];
+          peers = [
+            {
+              publicKey = "PyLCXAQT8KkM4T+dUsOQfn+Ub3pGxfGlxkIApuig+hk=";
+              presharedKeyFile = config.age.secrets."wireguard/vpn/presharedkey".path;
+              endpoint = "213.152.161.236:1637";
+              persistentKeepalive = 15;
+              allowedIPs = [
+                "0.0.0.0/0"
+                "::/0"
+              ];
+            }
+          ];
+        };
+      };
+    };
+  };
 
   services = {
-    qbittorrent = {
-      enable = true;
-      profileDir = "/srv/qbittorrent";
-    };
     prowlarr = {
       enable = true;
       dataDir = "/srv/prowlarr";
@@ -32,41 +104,15 @@
     };
   };
 
-  networking.wg-quick.interfaces = {
-    wg-vpn = {
-      address = [
-        "10.168.170.61/32"
-        "fd7d:76ee:e68f:a993:eaca:2b0f:73cc:aff3/128"
-      ];
-      privateKeyFile = config.age.secrets."wireguard/vpn/privatekey".path;
-      dns = [
-        "10.128.0.1"
-        "fd7d:76ee:e68f:a993::1"
-      ];
-      peers = [
-        {
-          publicKey = "PyLCXAQT8KkM4T+dUsOQfn+Ub3pGxfGlxkIApuig+hk=";
-          presharedKeyFile = config.age.secrets."wireguard/vpn/presharedkey".path;
-          endpoint = "de3.vpn.airdns.org:1637";
-          persistentKeepalive = 15;
-          allowedIPs = [
-            "0.0.0.0/0"
-            "::/0"
-          ];
-        }
-      ];
-    };
-  };
-
   imports = [ inputs.agenix.nixosModules.default ];
 
   age.identityPaths = [ "/home/benjamin/.ssh/id_ed25519" ];
   age.secrets = {
     "wireguard/vpn/privatekey" = {
-      file = self + /secrets/desktop/Laptop/wireguard/vpn/privatekey.age;
+      file = self + /secrets/server/wireguard/vpn/privatekey.age;
     };
     "wireguard/vpn/presharedkey" = {
-      file = self + /secrets/desktop/Laptop/wireguard/vpn/presharedkey.age;
+      file = self + /secrets/server/wireguard/vpn/presharedkey.age;
     };
   };
 }
