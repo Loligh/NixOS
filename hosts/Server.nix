@@ -17,6 +17,7 @@
     ../modules/server/hardware-configuration.nix
     ../modules/server/reverseProxy.nix
     ../modules/server/ssh.nix
+    ../modules/server/swap.nix
     #../modules/server/vpn.nix
     ../modules/server/gitRemote.nix
     ../modules/server/smart-home/esphome.nix
