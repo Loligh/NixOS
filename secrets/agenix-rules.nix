@@ -8,9 +8,13 @@ let
   all = users ++ systems;
 in
 {
+  "server/firefly/appkey.age".publicKeys = all;
+
   "server/restic/repo_password.age".publicKeys = all;
   "server/restic/repo_url.age".publicKeys = all;
   "server/restic/repo_credentials.age".publicKeys = all;
+
+  "server/govee2mqtt/govee2mqtt.env".publicKeys = all;
 
   "server/wireguard/home/privatekey.age".publicKeys = all;
   "server/wireguard/vpn/privatekey.age".publicKeys = all;
@@ -23,6 +27,4 @@ in
   "desktop/Laptop/wireguard/vpn/presharedkey.age".publicKeys = [ benjamin ];
 
   "desktop/general/ssh/work/id_ed25519.age".publicKeys = [ benjamin ];
-
-  "server/firefly/appkey.age".publicKeys = all;
 }
