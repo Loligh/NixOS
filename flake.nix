@@ -31,12 +31,12 @@
 
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -65,12 +65,12 @@
             inputs.home-manager-unstable.nixosModules.home-manager
           ];
         };
-        server = nixpkgs-stable.lib.nixosSystem {
+        server = nixpkgs-unstable.lib.nixosSystem {
           specialArgs = { inherit self inputs; };
           modules = [
             ./configuration.nix
             ./hosts/Server.nix
-            inputs.home-manager-stable.nixosModules.home-manager
+            inputs.home-manager-unstable.nixosModules.home-manager
           ];
         };
       };
