@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services.caddy.virtualHosts = {
     "home.becae.org".extraConfig = ''
@@ -10,13 +10,10 @@
     enable = true;
     config = {
       default_config = { };
-      http = {
-        use_x_forwarded_for = true;
-        trusted_proxies = [
-          "::1"
-          "127.0.0.1"
-        ];
-      };
+      homeassistant.time_zone = null;
+      automation = "!include automations.yaml";
+      scene = "!include scenes.yaml";
+      #script = "!include scripts.yaml";
     };
     configDir = "/srv/home-assistant";
     extraComponents = [
@@ -33,6 +30,7 @@
       "webostv"
       "esphome"
       "tuya"
+      "govee_light_local"
 
       "analytics"
       "google_translate"
@@ -43,6 +41,8 @@
     customComponents = with pkgs.home-assistant-custom-components; [
       tuya_local
     ];
-
+    #openFirewallForComponents = true;
   };
+
+  networking.firewall.allowedUDPPorts = lib.mkAfter [ 4002 ]; # for govee_light_local
 }
