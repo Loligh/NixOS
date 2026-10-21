@@ -20,6 +20,9 @@
         encode gzip
         file_server
       '';
+      "fints.becae.org".extraConfig = ''
+        reverse_proxy 127.0.0.1:8081
+      '';
     };
 
     phpfpm.pools = {
@@ -40,7 +43,7 @@
       dataDir = "/srv/firefly";
       settings = {
         APP_ENV = "production";
-        APP_URL = "finance.becae.org";
+        APP_URL = "https://finance.becae.org";
         APP_KEY_FILE = config.age.secrets."firefly/appkey".path;
       };
     };
@@ -48,9 +51,23 @@
       enable = true;
       dataDir = "/srv/firefly-data-importer";
       settings = {
+        APP_ENV = "production";
+        FIREFLY_III_URL = "https://finance.becae.org";
+        ENABLE_BANKING_IMPORT_IP = "autodetect";
         TRUSTED_PROXIES = "**";
         EXPECT_SECURE_URL = true;
       };
+    };
+  };
+
+  virtualisation = {
+    podman.enable = true;
+    oci-containers.containers."firefly-iii-fints-importer" = {
+      image = "docker.io/benkl/firefly-iii-fints-importer:latest";
+      ports = [ "127.0.0.1:8081:8080" ];
+      volumes = [
+        "/srv/firefly-iii-fints-importer:/app/configurations"
+      ];
     };
   };
 
