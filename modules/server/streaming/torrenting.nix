@@ -4,6 +4,9 @@
   config,
   ...
 }:
+let
+  hostStateVersion = config.system.stateVersion;
+in
 {
   services.caddy.virtualHosts = {
     "torrent.becae.org".extraConfig = ''
@@ -30,12 +33,12 @@
   containers.torrent = {
     autoStart = true;
     privateNetwork = true;
-    enableTun = true;
+    # enableTun = true;
     hostAddress = "10.0.1.1";
     localAddress = "10.0.1.2";
     bindMounts = {
       "downloads" = {
-        hostPath = "/torrents";
+        hostPath = "/downloads";
         mountPoint = "/downloads";
         isReadOnly = false;
       };
@@ -56,10 +59,15 @@
       };
     };
     config = {
+      system.stateVersion = hostStateVersion;
       networking.firewall.allowedTCPPorts = [ 8080 ];
       services.qbittorrent = {
         enable = true;
         profileDir = "/srv/qbittorrent/";
+      };
+      users.groups."torrenting" = {
+        gid = 974;
+        members = [ "qbittorrent" ];
       };
       networking.wg-quick.interfaces = {
         airvpn = {
@@ -101,6 +109,9 @@
     sonarr = {
       enable = true;
       dataDir = "/srv/sonarr";
+    };
+    flaresolverr = {
+      enable = true;
     };
   };
 
