@@ -18,6 +18,7 @@
     ../modules/server/reverseProxy.nix
     ../modules/server/ssh.nix
     ../modules/server/swap.nix
+    ../modules/server/vault.nix
     #../modules/server/vpn.nix
     ../modules/server/gitRemote.nix
     ../modules/server/smart-home/esphome.nix

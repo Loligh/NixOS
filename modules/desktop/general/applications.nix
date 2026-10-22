@@ -25,6 +25,7 @@
       croc
       claude-code
       teams-for-linux
+      bitwarden-desktop
 
       # fun terminal apps
       cool-retro-term
