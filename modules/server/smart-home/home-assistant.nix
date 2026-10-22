@@ -31,6 +31,7 @@
       "esphome"
       "tuya"
       "govee_light_local"
+      "wake_on_lan"
 
       "analytics"
       "google_translate"
