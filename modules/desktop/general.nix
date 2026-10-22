@@ -12,6 +12,7 @@
     ./general/bluetooth.nix
     ./general/defaultApps.nix
     ./general/gaming.nix
+    ./general/kernel.nix
     ./general/shell.nix
     ./general/ssh.nix
     ./general/compositor/styling.nix
