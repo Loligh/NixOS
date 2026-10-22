@@ -1,7 +1,12 @@
 { pkgs, ... }:
 {
-  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+  programs = {
+    fish.enable = true;
+    starship = {
+      enable = true;
+    };
+  };
 
   environment.shellAliases = {
     ff = "fastfetch";
